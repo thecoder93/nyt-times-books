@@ -2,7 +2,7 @@ import React from 'react';
 
 function App() {
   return (
-    <div>New York Times - Times Books</div>
+    <div>New York Times</div>
   );
 }
 
