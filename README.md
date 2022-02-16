@@ -1,12 +1,12 @@
 ![commit](https://img.shields.io/github/last-commit/thecoder93/nyt-times-books?color=cyan)
 [![CircleCI](https://circleci.com/gh/thecoder93/nyt-times-books/tree/master.svg?style=svg)](https://circleci.com/gh/thecoder93/nyt-times-books/tree/master)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/66678c96-2f19-49b1-998f-7ae736be5619/deploy-status)](https://app.netlify.com/sites/nyt-times-books/deploys)
 
 # The New York Times Best Selling Books
 ![typescript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 ![react](https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white)
 ![styled](https://img.shields.io/badge/-Styled_Components-db7092?style=flat-square&logo=styled-components&logoColor=white)
 ![nytimes](https://img.shields.io/badge/-New_York_Times-000000?style=flat-square&logo=new-york-times&logoColor=white)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/66678c96-2f19-49b1-998f-7ae736be5619/deploy-status)](https://app.netlify.com/sites/nyt-times-books/deploys)
 
 
 A **React** application that show best selling books using [The New York Times public APIs](https://developer.nytimes.com/) 📚
