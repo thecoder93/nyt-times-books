@@ -1,0 +1,82 @@
+
+
+p { margin-bottom: 1.3em; }
+p:last-child { margin-bottom: 0; }
+
+.book-list {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1.5em;
+  
+}
+
+.book-list:last-child {
+  margin-bottom: 0;
+}
+
+.book-list .book-img {
+  margin-right: 30px;
+    width: 180px;
+    flex-shrink: 0;
+    bottom: -35px;
+    left: 35px;
+    border-radius: 2px;
+    box-shadow: -2px 6px 19px 0px #7f818e;
+    transition: .3s ease;
+}
+
+.book-img:hover {
+  transform: scale(1.3);
+}
+
+.book-list .book-link {
+  text-decoration: none;
+  color: #331111;
+}
+
+.book-list .book-authors {
+  font-size: .85em;
+  font-style: italic;
+}
+
+
+.book__num-container {
+ 
+  background-color: #6e6cdb;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book__num-weeks {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Rank */
+.book__rank {
+  margin: 0 0 20px;
+}
+
+.book__rank-text {
+  text-transform: uppercase;
+  color: #ec6a32;
+}
+
+h1 {
+  color: gray;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: -3px;
+}
