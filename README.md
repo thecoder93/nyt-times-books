@@ -11,6 +11,7 @@
 
 A **React** application that show best selling books using [The New York Times public APIs](https://developer.nytimes.com/) 📚
 
+You can visit the deployed app [here](https://nyt-times-books.netlify.app/).
 ## Installation
 
 Clone the master branch and then run the following scripts in the project directory:
