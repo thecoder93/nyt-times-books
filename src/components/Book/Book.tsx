@@ -18,7 +18,7 @@ const Book = ({
       ) : (
         listBook.map((book: IBook) => (
           <div className="book-list">
-            <a href="#" target="_blank" className="book-link">
+            <a href="/#" target="_blank" className="book-link">
               <img
                 src={book.book_image}
                 width="213"
@@ -28,7 +28,7 @@ const Book = ({
               />
             </a>
             <div>
-              <a href="#" target="_blank" className="book-link">
+              <a href="/#" target="_blank" className="book-link">
                 {book.title}
               </a>
               <p className="book-authors">by {book.author}</p>
