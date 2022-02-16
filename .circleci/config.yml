@@ -1,5 +1,15 @@
 version: 2
 jobs:
+  test:
+    docker:
+      - image: node:16.10.0
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run: npm test
+
   build:
     docker:
       - image: node:16.10.0
@@ -16,7 +26,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: yarn install
+      - run: npm i
 
       - save_cache:
           paths:
@@ -24,8 +34,30 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: npm test
+      #- run: npm test
 
       - run: npm run build
 
+     # - run: npm run netlify:deploy
+  
+  deploy:
+    docker:
+      - image: node:16.10.0
+    
+    working_directory: ~/repo
+
+    steps:
+      - checkout
       - run: npm run netlify:deploy
+
+workflows:
+  version: 2
+  test-build-and-deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - test
