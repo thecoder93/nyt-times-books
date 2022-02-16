@@ -1,4 +1,5 @@
-![commit](https://img.shields.io/github/last-commit/thecoder93/nyt-times-books?color=green)
+![commit](https://img.shields.io/github/last-commit/thecoder93/nyt-times-books?color=cyan)
+[![CircleCI](https://circleci.com/gh/thecoder93/nyt-times-books/tree/master.svg?style=svg)](https://circleci.com/gh/thecoder93/nyt-times-books/tree/master)
 
 # The New York Times Best Selling Books
 ![typescript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
@@ -16,7 +17,7 @@ Clone the master branch and then run the following scripts in the project direct
 
 - `npm start` - start the react app
 
-- `npm test` - run unit tests
+- `npm test` - run tests
 
 ## Resources
 
