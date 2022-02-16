@@ -8,6 +8,13 @@ jobs:
 
     steps:
       - checkout
+      - run: npm i
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
       - run: npm test
 
   build:
@@ -48,6 +55,13 @@ jobs:
 
     steps:
       - checkout
+      - run: npm i
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
       - run: npm run netlify:deploy
 
 workflows:
