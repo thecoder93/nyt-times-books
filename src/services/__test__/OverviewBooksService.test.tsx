@@ -1,4 +1,4 @@
-import { API_URL, getOverviewBooks } from '../OverviewBooksServices';
+import { API_URL2, getOverviewBooks } from '../OverviewBooksServices';
 import axios from '../__mocks__/axios';
 
 describe("fetchBooks", () => {
@@ -12,7 +12,7 @@ describe("fetchBooks", () => {
         const result = await getOverviewBooks();
   
         // then
-        expect(axios.get).toHaveBeenCalledWith(API_URL);
+        expect(axios.get).toHaveBeenCalledWith(API_URL2);
         expect(result).toEqual(books);
       });
     })
@@ -28,7 +28,7 @@ describe("fetchBooks", () => {
           const result = await getOverviewBooks();
     
           // then
-          expect(axios.get).toHaveBeenCalledWith(API_URL);
+          expect(axios.get).toHaveBeenCalledWith(API_URL2);
           expect(result).toEqual([]);
         });
       });
