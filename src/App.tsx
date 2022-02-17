@@ -4,7 +4,7 @@ function App() {
   return (
     <> 
     <ListBooks/>
-    {/* <div>New York Times</div> */}
+    <div>New York Times</div>
     </>
   );
 }
