@@ -1,13 +1,17 @@
 import axios from "axios";
-//  const NYT_APP_API_KEY = process.env.REACT_APP_NYT_APP_API_KEY  
-//  const BASE_URL = process.env.REACT_APP_BASE_URL_API_NYT  
+import { API_URL_DEV, API_URL_PROD } from "../Constants";
 
-//export const API_URL = `${BASE_URL}/lists/overview.json?api-key=${NYT_APP_API_KEY}`
-export const API_URL = `/.netlify/functions/books`
+export let API_ENDPOINT: string;
+
+if (process.env.NODE_ENV === "production") {
+  API_ENDPOINT = API_URL_PROD
+} else {
+  API_ENDPOINT = API_URL_DEV
+}
 
 export const getOverviewBooks = async () => {
   try {
-    return await axios.get(API_URL);
+    return await axios.get(API_ENDPOINT);
   } catch (e) {
     return [];
   }
