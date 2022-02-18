@@ -1,10 +1,15 @@
 import ListBooks from './components/ListBooks/ListBooks';
+import Layout from './styles/Layout';
+import LayoutHeader from './styles/LayoutHeader';
+import './styles/css/header.css';
 
 function App() {
   return (
-    <> 
-    <ListBooks/>
-    <div>New York Times</div>
+    <>
+      <LayoutHeader />
+        <Layout>
+          <ListBooks />
+        </Layout>
     </>
   );
 }
