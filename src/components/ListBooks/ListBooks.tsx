@@ -3,6 +3,8 @@ import { getOverviewBooks } from "../../services/OverviewBooksServices";
 import Book from "../Book/Book";
 import BookOfWeek from "../BookOfWeek/BookOfWeek";
 import LoadingSpinner from "../Spinner/Spinner";
+import {v4 as uuid} from "uuid";
+
 
 const ListBooks = () => {
     
@@ -23,7 +25,7 @@ const ListBooks = () => {
         {isLoading ? <LoadingSpinner /> : (
           <>
           <BookOfWeek>
-            {category.map((arrayBook: any) => <Book listBook={arrayBook.books} category={arrayBook.list_name} /> )} 
+            {category.map((arrayBook: any) => <Book listBook={arrayBook.books} category={arrayBook.list_name} key={uuid()}  /> )} 
           </BookOfWeek>
           </>
         )

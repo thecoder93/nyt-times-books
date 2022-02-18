@@ -1,6 +1,8 @@
 import { IBook } from "../../interface/IBook";
 import './Book.css';
 import BookLink from "./BookLink";
+import {v4 as uuid} from "uuid";
+
 
 const Book = ({
   listBook,
@@ -11,14 +13,13 @@ const Book = ({
 }) => {
   <h1>{category}</h1>;
 
-
   return (
     <>
       {listBook.length === 0 ? (
         <div>No Book</div>
       ) : (
         listBook.map((book: IBook) => (
-          <div className="book-list">
+          <div className="book-list" key={uuid()} >
             <BookLink bookLink={book.buy_links} >
               <img
                 src={book.book_image}
@@ -29,9 +30,9 @@ const Book = ({
               />
             </BookLink>
             <div>
-              <a href="/#" target="_blank" rel="noreferrer" className="book-link" data-testid="title-book">
+              <div className="book-link" data-testid="title-book">
                 {book.title}
-              </a>
+              </div>
               <p className="book-authors">by {book.author}</p>
               <div className="book__text-container">
                 <p className="book__rank">
