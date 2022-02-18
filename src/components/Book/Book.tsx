@@ -29,7 +29,7 @@ const Book = ({
               />
             </BookLink>
             <div>
-              <a href="/#" target="_blank" className="book-link" data-testid="title-book">
+              <a href="/#" target="_blank" rel="noreferrer" className="book-link" data-testid="title-book">
                 {book.title}
               </a>
               <p className="book-authors">by {book.author}</p>

@@ -5,7 +5,7 @@ const BookLink = (props: any) => {
   return (
     <>
       {props.bookLink.length !== 0 ? (
-        <a href={props.bookLink[0].url} target="_blank" className="book-link">
+        <a href={props.bookLink[0].url} target="_blank" rel="noreferrer" className="book-link">
           {props.children}
         </a>
       ) : (
