@@ -1,5 +1,6 @@
 import { IBook } from "../../interface/IBook";
 import './Book.css';
+import BookLink from "./BookLink";
 
 const Book = ({
   listBook,
@@ -18,7 +19,7 @@ const Book = ({
       ) : (
         listBook.map((book: IBook) => (
           <div className="book-list">
-            <a href="/#" target="_blank" className="book-link">
+            <BookLink bookLink={book.buy_links} >
               <img
                 src={book.book_image}
                 width="213"
@@ -26,7 +27,7 @@ const Book = ({
                 alt={book.title}
                 className="book-img"
               />
-            </a>
+            </BookLink>
             <div>
               <a href="/#" target="_blank" className="book-link" data-testid="title-book">
                 {book.title}
