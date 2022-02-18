@@ -33,7 +33,7 @@ const Book = ({
 
   return (
     <>
-  <h1 className="category">{category}</h1>;
+  <h1 className="category">{category}</h1>
   <DisplayBooks>
 
       {listBook.length === 0 ? (
