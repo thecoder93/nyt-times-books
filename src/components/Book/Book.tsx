@@ -2,7 +2,25 @@ import { IBook } from "../../interface/IBook";
 import './Book.css';
 import BookLink from "./BookLink";
 import {v4 as uuid} from "uuid";
+import styled from "styled-components";
 
+const DisplayBooks = styled.div`
+display : grid;
+grid-gap: 30px;
+row-gap: 2em;
+margin: 2rem;
+
+@media only screen and (min-width: 768px) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media only screen and (min-width: 1024px) {
+  display: grid;
+  grid-template-areas: 'category category category';
+   grid-template-columns: repeat(2, 1fr);
+}
+`
 
 const Book = ({
   listBook,
@@ -11,15 +29,18 @@ const Book = ({
   listBook: IBook[];
   category: string;
 }) => {
-  <h1>{category}</h1>;
+
 
   return (
     <>
+  <h1 className="category">{category}</h1>;
+  <DisplayBooks>
+
       {listBook.length === 0 ? (
         <div>No Book</div>
       ) : (
         listBook.map((book: IBook) => (
-          <div className="book-list" key={uuid()} >
+          <div className="book-list book" key={uuid()} >
             <BookLink bookLink={book.buy_links} >
               <img
                 src={book.book_image}
@@ -49,6 +70,7 @@ const Book = ({
           </div>
         ))
       )}
+      </DisplayBooks>
     </>
   );
 };

@@ -80,3 +80,7 @@ h1 {
   font-size: 50px;
   margin-bottom: -3px;
 }
+
+.category{
+  grid-area: category;
+}
