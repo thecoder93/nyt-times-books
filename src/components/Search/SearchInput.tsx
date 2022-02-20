@@ -18,7 +18,7 @@ const SearchInput = () => {
         type="text"
         className="search-input"
         placeholder="Cerca libro..."
-        onChange={handleChange}
+        onChange={handleChange}      
         value={search}
       />
     </>
