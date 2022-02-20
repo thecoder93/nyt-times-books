@@ -1,17 +1,26 @@
-import { createContext, useEffect, useState } from "react"
+import { createContext, useEffect, useMemo, useState } from "react"
 import { getOverviewBooks } from "../../services/OverviewBooksServices";
 import Book from "../Book/Book";
 import LoadingSpinner from "../Spinner/Spinner";
 import {v4 as uuid} from "uuid";
-
-
+ 
 export const BooksContext = createContext<Partial<any>>({});
-
+ 
+const getMatchedList = (searchText: string, listOfBooks: any[]) => {
+    if (searchText === "") return listOfBooks;
+    return listOfBooks.map((element) => {
+        return {...element, books: element.books.filter((books: any) => books.title.toLowerCase().includes(searchText.toLowerCase()))}
+      })
+  };
+ 
 const ListBooks = (props: any) => {
     
-  const [category, setCategory] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
+    const [search, setSearch] = useState('');
+    const [category, setCategory] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+ 
+    const filteredCategories = useMemo(() => getMatchedList(search, category), [search, category])
+ 
     useEffect( () => {
         setIsLoading(true);
         getOverviewBooks().then(( response: any ) => {
@@ -22,22 +31,22 @@ const ListBooks = (props: any) => {
       }, [])
       
       const { Provider } = BooksContext
-
+ 
   return (
     <>
         {isLoading ? <LoadingSpinner /> : (
           <>
-            <Provider value={{category, setCategory}}>
+            <Provider value={{search, setSearch }}>
               {props.children}
             </Provider>
-
-            {category.map((arrayBook: any) => <Book listBook={arrayBook.books} category={arrayBook.list_name} key={uuid()}  /> )} 
-
+ 
+            {filteredCategories.map((arrayBook: any) => <Book listBook={arrayBook.books} category={arrayBook.list_name} key={uuid()}  /> )} 
+ 
           </>
         )
       }
     </>
   )
 }
-
+ 
 export default ListBooks
