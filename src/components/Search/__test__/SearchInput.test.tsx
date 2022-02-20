@@ -1,6 +1,5 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { IBook } from '../../../interface/IBook';
 import { BooksContext } from '../../ListBooks/ListBooks';
 import SearchInput from '../SearchInput'
 

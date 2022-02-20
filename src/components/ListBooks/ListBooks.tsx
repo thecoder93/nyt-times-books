@@ -3,6 +3,7 @@ import { getOverviewBooks } from "../../services/OverviewBooksServices";
 import Book from "../Book/Book";
 import LoadingSpinner from "../Spinner/Spinner";
 import {v4 as uuid} from "uuid";
+import NoBooks from "../NoBooks/NoBooks";
  
 export const BooksContext = createContext<Partial<any>>({});
  
@@ -42,9 +43,15 @@ const ListBooks = (props: any) => {
             <Provider value={{search, setSearch }}>
               {props.children}
             </Provider>
- 
-            {filteredCategories.map((arrayBook: any) => <Book listBook={arrayBook.books} category={arrayBook.list_name} key={uuid()}  /> )} 
- 
+            
+            {/*check if isempty or fill*/}
+            {filteredCategories.map((arrayBook: any) => arrayBook.books.length).reduce(
+                (previousValue, currentValue) => previousValue + currentValue,
+                0
+            ) === 0 ? 
+            <NoBooks/> : 
+            filteredCategories.map((arrayBook: any) => <Book listBook={arrayBook.books} category={arrayBook.list_name} key={uuid()}  /> )} 
+
           </>
         )
       }
