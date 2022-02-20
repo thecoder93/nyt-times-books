@@ -1,5 +1,5 @@
-import {Logo} from "../assets/Ui";
-import SearchInput from "../components/Search/SearchInput";
+import {Logo} from "../../assets/Ui";
+import SearchInput from "../Search/SearchInput";
 
 const LayoutHeader = () => {
 

@@ -1,7 +1,7 @@
 import ListBooks from './components/ListBooks/ListBooks';
-import Layout from './styles/Layout';
-import LayoutHeader from './styles/LayoutHeader';
+import LayoutHeader from './components/Layout/LayoutHeader';
 import './styles/css/header.css';
+import Layout from './components/Layout/Layout';
 
 function App() {
   
