@@ -24,10 +24,7 @@ describe("Book list", () => {
           ];
       });
 
-    test('renders "no book" when the are no book', () => {
-        const {getByText} = render(<Book listBook={[]} category={"Fiction"}/>)
-        expect(getByText(/No book/i)).toBeInTheDocument();
-    })
+
 
      test('should render list of books', () => {
 

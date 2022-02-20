@@ -4,11 +4,13 @@ import LayoutHeader from './styles/LayoutHeader';
 import './styles/css/header.css';
 
 function App() {
+  
   return (
     <>
-      <LayoutHeader />
         <Layout>
-          <ListBooks />
+          <ListBooks>
+              <LayoutHeader />
+          </ListBooks>
         </Layout>
     </>
   );

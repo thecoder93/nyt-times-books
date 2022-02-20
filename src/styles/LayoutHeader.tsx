@@ -2,6 +2,7 @@ import {Logo} from "../assets/Ui";
 import SearchInput from "../components/Search/SearchInput";
 
 const LayoutHeader = () => {
+
   return (
       <div className="parent">
     <nav className="navbar navbar-dark bg-blue">

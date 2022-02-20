@@ -83,4 +83,14 @@ h1 {
 
 .category{
   grid-area: category;
+
+}
+
+.category:empty { 
+  grid-area: category; 
+  display: none;
+}
+
+div:empty {
+  display: none;
 }

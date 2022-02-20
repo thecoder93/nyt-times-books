@@ -13,12 +13,13 @@ margin: 2rem;
 @media only screen and (min-width: 768px) {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  
 }
 
 @media only screen and (min-width: 1024px) {
   display: grid;
   grid-template-areas: 'category category category';
-   grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 `
 
@@ -33,12 +34,10 @@ const Book = ({
 
   return (
     <>
-  <h1 className="category">{category}</h1>
+    {listBook.length !== 0 && <h1 className="category">{category}</h1>}
   <DisplayBooks>
 
-      {listBook.length === 0 ? (
-        <div>No Book</div>
-      ) : (
+      {listBook.length !== 0 && (
         listBook.map((book: IBook) => (
           <div className="book-list book" key={uuid()} >
             <BookLink bookLink={book.buy_links} >
