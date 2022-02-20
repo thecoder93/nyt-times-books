@@ -9,7 +9,10 @@ export const BooksContext = createContext<Partial<any>>({});
 const getMatchedList = (searchText: string, listOfBooks: any[]) => {
     if (searchText === "") return listOfBooks;
     return listOfBooks.map((element) => {
-        return {...element, books: element.books.filter((books: any) => books.title.toLowerCase().includes(searchText.toLowerCase()))}
+        return {...element, 
+          books: 
+            element.books.filter((books: any) => //search by title or author
+              books.title.toLowerCase().includes(searchText.toLowerCase()) || books.author.toLowerCase().includes(searchText.toLowerCase()))}
       })
   };
  
