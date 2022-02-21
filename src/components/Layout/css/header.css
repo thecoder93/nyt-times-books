@@ -8,11 +8,7 @@
   :root {
     --blue: #201e1e;
   }
-  
-  a {
-    text-decoration: none;
-  }
-  
+
   .bg-blue {
     background-color: var(--blue);
   }
@@ -44,9 +40,6 @@
     padding-right: 0;
   }
 
-  .nav-link {
-    --white: #ffffff;
-  }
   .parent {
     position: fixed;
     top: 0;

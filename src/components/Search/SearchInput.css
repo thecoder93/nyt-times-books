@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+
+/* Base styling */
+
+
+.search__input {
+        width: 100%;
+        padding: 12px 24px;
+
+        background-color: transparent;
+        transition: transform 250ms ease-in-out;
+        font-size: 14px;
+        line-height: 18px;
+        color: #ffffff !important;
+        border-radius: 50px;
+        border: 1px solid #ffffff;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+    
+    }
+
+.search__input::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+.search__input:hover,
+        .search__input:focus {
+            padding: 12px 0;
+            outline: 0;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #ffffff;
+            border-radius: 0;
+            background-position: 100% center;
+        }
+
