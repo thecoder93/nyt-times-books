@@ -31,7 +31,10 @@ const ListBooks = (props: any) => {
           setCategory(response.data.results?.lists.flat())
           setIsLoading(false);
         })
-        .catch((error) => console.log(error))  
+        .catch((error) => {
+          setIsLoading(false);
+          console.log(error)
+        }) 
       }, [])
       
       const { Provider } = BooksContext

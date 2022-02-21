@@ -1,6 +1,10 @@
 
 
-p { margin-bottom: 1.3em; }
+p { margin-bottom: 1.3em; 
+  max-width: 100px;
+  word-wrap:break-word;
+
+}
 p:last-child { margin-bottom: 0; }
 
 .book-list {
