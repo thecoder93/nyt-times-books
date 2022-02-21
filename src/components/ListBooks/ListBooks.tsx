@@ -5,7 +5,7 @@ import LoadingSpinner from "../Spinner/Spinner";
 import {v4 as uuid} from "uuid";
 import NoBooks from "../NoBooks/NoBooks";
  
-export const BooksContext = createContext<Partial<any>>({});
+export const BooksContext = createContext<any>({});
  
 const getMatchedList = (searchText: string, listOfBooks: any[]) => {
     if (searchText === "") return listOfBooks;
